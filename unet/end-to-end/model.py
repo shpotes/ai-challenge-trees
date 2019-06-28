@@ -8,7 +8,7 @@ from architecture import vanilla_unet
 from tensorflow.keras import optimizers
 from tensorflow.keras.models import Model
 from tensorflow.keras.callbacks import ReduceLROnPlateau, ModelCheckpoint
-from tensorflow.keras.callbacks import EarlyStopping, TerminateOnNaN, Tensorboard
+from tensorflow.keras.callbacks import EarlyStopping, TerminateOnNaN, TensorBoard
 
 class UNET:
     def __init__(self, config):
@@ -123,10 +123,9 @@ class UNET:
 
         CALLBACKS = [] if not _CALLBACKS \
             else [EarlyStopping(patience=10),
-                  Tensorboard(log_dir='%s/log_%s_%s' % 
+                  TensorBoard(log_dir='%s/log_%s' % 
                               (self.config['train']['callbacks'],
-                               self.config['model']['architecture'],
-                               datetime.now().strftime("%Y%m%d-%H%M%S"))),
+                               self.config['model']['architecture'])),
                   TerminateOnNaN(),
                   ReduceLROnPlateau(),
                   ModelCheckpoint('%s/chpts/w_%s.{epoch:02d}_%s.h5' % 
