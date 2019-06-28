@@ -7,7 +7,7 @@ def build_source_from_metadata(metadata, data_dir, mode):
     df = metadata.copy().sample(frac=1).reset_index(drop=True)
     df = df[df['split'] == mode]
     df['filepath'] = df['filename'].apply(
-        lambda x: os.path.join(data_dir, mode, '%s.%s' % (x, 'jpg')))
+        lambda x: os.path.join(data_dir, '%s.%s' % (x, 'jpg')))
 
     sources = list(zip(df['filepath'], df['idx'].apply(int)))
     return sources
@@ -53,6 +53,12 @@ def make_dataset(sources, mask, preprocess, training=False, batch_size=1,
     ds = ds.prefetch(1)
 
     return ds
+
+
+def get_folder_size(metadata, split):
+    return (metadata.split == split).sum()
+
+
 def imshow_batch_of_three(batch, show_label=True):
     label_batch = batch[1].numpy()
     image_batch = batch[0].numpy()
