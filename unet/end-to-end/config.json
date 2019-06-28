@@ -15,7 +15,7 @@
         "batch_size"       : 6,
         "learning_rate"    : 3e-4,
         "num_epochs"       : 100,
-        "callbacks"        : true,
+        "callbacks"        : "/content/logs",
         "metrics"          : ["accuracy"]
     }
 }

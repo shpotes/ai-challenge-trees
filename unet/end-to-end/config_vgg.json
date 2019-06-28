@@ -14,7 +14,7 @@
         "batch_size"       : 2,
         "learning_rate"    : 5e-3,
         "num_epochs"       : 400,
-        "callbacks"        : false,
+        "callbacks"        : "",
         "metrics"          : ["accuracy"]
     }
 }
