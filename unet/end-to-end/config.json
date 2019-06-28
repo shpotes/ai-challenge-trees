@@ -1,14 +1,14 @@
 {
     "model" : {
-        "metadata_path" : "data/metadata.csv",
-        "mask_path"     : "data/mask_without_background.npy",
-        "data_path"     : "data/data",
+        "metadata_path" : "/content/drive/My Drive/Omdena/u-net/data/metadata.csv",
+        "mask_path"     : "/content/drive/My Drive/Omdena/u-net/data/mask_without_background.npy",
+        "data_path"     : "/content/drive/My Drive/Omdena/u-net/data/data",
 
         "architecture"  : "vanilla_unet",
         "input_size"    : 572,
         "output_size"   : 388,
 
-        "labels"        : ["tree", "not tree"]
+        "labels"        : ["tree"]
     },
 
     "train" : {
