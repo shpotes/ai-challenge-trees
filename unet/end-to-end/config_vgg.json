@@ -1,0 +1,20 @@
+{
+    "model" : {
+        "metadata_path" : "data/metadata.csv",
+        "mask_path"     : "data/mask_without_background.npy",
+        "data_path"     : "data",
+
+        "architecture"  : "vgg_unet",
+        "input_size"    : 224,
+	    "output_size"   : 224,
+        "labels"        : ["tree", "not tree"]
+    },
+
+    "train" : {
+        "batch_size"       : 2,
+        "learning_rate"    : 5e-3,
+        "num_epochs"       : 400,
+        "callbacks"        : false,
+        "metrics"          : ["accuracy"]
+    }
+}
